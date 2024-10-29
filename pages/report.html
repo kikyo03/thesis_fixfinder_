@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Detail</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body class="report_details">
+    <button class="open-button" onclick="openForm()">new report</button>
+    <div class="form-popup" id="myForm">
+        <form action="#" class="form-container">
+            <div class="report">
+                <h1>Report</h1>
+                <label><p>Report here your concern.<p></label>
+                <textarea rows="10" cols="40" placeholder="Write your details here.."></textarea>
+                <label>Attach a file:</label>
+                <input type="file" id="myfile" name="myfile"><br><br>
+                <button type="submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

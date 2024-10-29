@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Fix</title>
+    <link rel="stylesheet" href="emergency_fix.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon"></div>
+            <h2>Emergency Fix</h2>
+            <button class="close-btn">✖</button>
+        </div>
+        <div class="content">
+            <label class="location-label">LOCATION</label>
+            <div class="location-box"></div>
+
+            <div class="image-preview">
+                <img id="reportImage" src="faucet.jpg" alt="Report Image">
+            </div>
+            
+            <div id="detailsArea" class="report-details"></div>
+
+            <label class="reported-label">Reported By</label>
+        </div>
+        <div class="footer">
+            <button class="cancel-btn">Cancel Request</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('reportImage').src = 'faucet.jpg';
+            const reportDetails = "Water leak near the faucet. The issue seems to be worsening, and there's a puddle forming.";
+            document.getElementById('detailsArea').innerText = reportDetails;
+    
+            // Add click event listener to the close button
+            const closeButton = document.querySelector('.close-btn');
+            closeButton.addEventListener('click', function() {
+                // Action to perform when the button is clicked
+                alert('Close button clicked!'); // Replace this with your desired action
+            });
+        };
+    </script>
+    
+</body>
+</html>

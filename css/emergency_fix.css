@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #f5f5f5;
+    border: 2px solid #333;
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.header .icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('warning-icon.png'); /* Add a warning icon */
+    background-size: cover;
+}
+
+.header h2 {
+    font-size: 16px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.close-btn {
+    background-color: #ff4d4d; /* Change to your preferred color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 50%; /* Makes it circular */
+    width: 40px; /* Width of the button */
+    height: 40px; /* Height of the button */
+    font-size: 20px; /* Font size for the 'X' */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none; /* Remove outline */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.close-btn:hover {
+    background-color: #ff1a1a; /* Darker on hover */
+}
+
+
+.content {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.location-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.location-box {
+    background-color: #d3d3d3;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.report-area {
+    width: 100%;
+    height: 80px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.reported-label {
+    display: block;
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.cancel-btn {
+    background-color: #1AD4FD; 
+    color: black; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-weight: bold; /* Makes the text bold */
+    cursor: pointer;
+    width: 100%; 
+    max-width: 200px; 
+    margin: 10px auto; 
+    transition: background-color 0.3s; 
+}
+
+.cancel-btn:hover {
+    background-color: #0ca6c2; /* Change to a darker shade on hover if needed */
+}
+
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .cancel-btn {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+
+/* Styling the image preview */
+.image-preview {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#reportImage {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Styling the text area */
+.report-area {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    box-sizing: border-box;
+}

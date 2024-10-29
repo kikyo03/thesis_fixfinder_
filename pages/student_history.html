@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Report History</title>
+        <link rel="stylesheet" href="student_history.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    
+<body>
+    <div class="container">
+        <h1>Student Report History</h1>
+        
+        <div class="report-section">
+            <h2>Student's Portal Reports</h2>
+
+            <!-- First Report Entry -->
+            <div class="report-entry">
+                <div class="report-info">
+                    <span class="date">08/11/2024</span>
+                    <span class="report-name">Joan Report</span>
+                </div>
+                <div class="buttons">
+                    <button class="view-btn" onclick="toggleReport('report1')">View</button>
+                    <button class="hide-btn" onclick="hideReport('report1')">Hide</button>
+                </div>
+            </div>
+
+            <!-- Second Report Entry -->
+            <div class="report-entry">
+                <div class="report-info">
+                    <span class="date">08/10/2024</span>
+                    <span class="report-name">Jhewen Shene Report</span>
+                </div>
+                <div class="buttons">
+                    <button class="view-btn" onclick="toggleReport('report2')">View</button>
+                    <button class="hide-btn" onclick="hideReport('report2')">Hide</button>
+                </div>
+            </div>
+
+            <!-- First Report Content (Status: Ongoing) -->
+            <div id="report1" class="report-content" style="display:none;">
+                <div class="report-header">
+                    <span class="report-title"><strong>Joan Report</strong></span>
+                    <span class="status ongoing">Status: Ongoing</span>
+                </div>
+                <div class="report-details">
+                    <p><strong>Type:</strong> Electric Report</p>
+                    <p><strong>Issue:</strong> Aircon not working</p>
+                    <p><strong>Requested By:</strong> Joan </p>
+                    <p><strong>Date:</strong> 08/11/2024</p>
+                </div>
+            </div>
+
+            <!-- Second Report Content (Status: Completed) -->
+            <div id="report2" class="report-content" style="display:none;">
+                <div class="report-header">
+                    <span class="report-title"><strong>Jhewen Shene Report</strong></span>
+                    <span class="status completed">Status: Completed</span>
+                </div>
+                <div class="report-details">
+                    <p><strong>Type:</strong> Electric Report</p>
+                    <p><strong>Issue:</strong> Aircon not working</p>
+                    <p><strong>Requested By:</strong> Jhewen Shene</p>
+                    <p><strong>Date:</strong> 08/10/2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="student_history.js"></script>
+</body>
+</html>

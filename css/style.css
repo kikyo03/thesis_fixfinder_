@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  /* background-color: rgb(231, 232, 235); */
+  background-image: url("../img/bgmap.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Tooltip styles */
+#name {
+  position: absolute;
+  background-color: white;
+  width: fit-content;
+  opacity: 0;
+  border-radius: 5px;
+  border: 3px solid rgb(245, 128, 128);
+  padding: 0px 5px;
+  font-size: 1.5rem;
+  transition: opacity 0.3s;
+  z-index: 1000; /* Ensure the label appears on top */
+}
+
+svg path {
+  cursor: pointer;
+}
+
+/* Sliding column styles */
+#slidingColumn {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 10; /* Lower z-index than the label */
+}
+
+#slidingColumn.show {
+  right: 0;
+}
+
+#closeButton {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(245, 128, 128);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pin {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pin:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+/* Map container styles */
+#mapContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+

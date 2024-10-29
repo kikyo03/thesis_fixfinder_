@@ -1,0 +1,117 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color:#000; 
+    padding: 20px;
+    color: #C7C6C6; 
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profile {
+    text-align: center; 
+    margin-bottom: 20px; 
+  }
+  
+  .profile-pic {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+  }
+  
+  .profile-details {
+    margin-bottom: 10px; 
+  }
+  
+  .name, .email, .role {
+    margin: 2px 0; 
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .update-btn {
+    background-color: #1AD4FD; 
+    color: black; 
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.3s;
+    margin-bottom: 10px; 
+  }
+  
+  .update-btn:hover {
+    background-color: #45a049; 
+  }
+  
+  .content {
+    margin-left: 260px; 
+    padding: 20px;
+  }
+  
+  
+  
+  .logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns the text and icon */
+    text-decoration: none;
+    color: red;
+    font-size: 16px;
+    font-weight: bold; /* Makes the "Logout" text bold */
+    margin-top: 20px; /* Adds spacing from other elements */
+  }
+  
+  .logout-button span {
+    margin-right: 8px; /* Space between text and icon */
+  }
+  
+  .logout-icon {
+    width: 16px;
+    height: 16px;
+    background-color: black; /* Black color for the arrow icon */
+    mask: url('arrow-icon.svg') no-repeat center; /* The arrow icon SVG */
+    -webkit-mask: url('arrow-icon.svg') no-repeat center; /* For WebKit browsers */
+  }
+  
+  .logout-button:hover {
+    opacity: 0.8; /* Optional hover effect for button */
+  }
+  

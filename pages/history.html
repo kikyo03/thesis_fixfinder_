@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Management Dashboard</title>
+    <link rel="stylesheet" href="../css/history.css">
+</head>
+<body>
+    <div class="container">
+        <h1>History Reports</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Report">
+            <input type="date" id="dateInput">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Report</th>
+                    <th>Type</th>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="reportTableBody">
+                <!-- Dynamic Report Rows Will Be Injected Here -->
+            </tbody>
+        </table>
+
+        <div class="buttons">
+            <button id="clearButton">Clear</button>
+            <button id="downloadButton">Download</button>
+        </div>
+    </div>
+
+    <script src="../script/script.js"></script>
+</body>
+</html>
