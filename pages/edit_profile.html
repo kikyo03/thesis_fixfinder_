@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/registration.css">
+    <link rel="stylesheet" href="../css/edit_profile.css">
+</head>
+<body>
+    <!-- Sidebar Menu -->
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>Admin</header>
+        <ul>
+            <li><a href="registration.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li><a href="../pages/report.html"><i class="fas fa-book"></i>Student Reports</a></li>
+            <li><a href="../pages/history.html"><i class="fas fa-history"></i>History</a></li>
+            <li><a href="../pages/test.html"><i class="fas fa-edit"></i>Edit Profile</a></li>
+            <li><a href="#"><i class="fas fa-sign-out"></i>Logout</a></li>
+        </ul>   
+    </div>
+
+    <!-- Main Content -->
+    <section>
+        <div class="container">
+            <h2>Edit Profile</h2>
+            <div class="profile-card">
+                <!-- <div class="profile-pic">
+                    <img src="../img/user.png" alt="Profile Picture">
+                    <div class="edit-icon">✎</div>
+                </div> -->
+                <div class="profile-pic">
+                    <img id="profileImage" src="../img/user.png" alt="Profile Picture">
+                    <div class="edit-icon" onclick="document.getElementById('fileInput').click();">✎</div>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                </div>                
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="text" id="role" placeholder="Enter your role">
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" onclick="navigateToDashboard()" class="back-button">Back to Home</button>
+                        <button type="submit" class="save-button">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript to handle navigation -->
+    <script src="../script/edit.js"></script>
+</body>
+</html>

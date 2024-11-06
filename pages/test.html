@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FixFinder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <title>FixFinder</title>
 </head>
 
 <body id="body">
@@ -20,10 +20,11 @@
     <div id="slidingColumn">
         <button id="closeButton">Close</button>
         <div id="pins"></div>
-        <img src="/assets/pins/layer-svgrepo-com.svg" alt="SVG Icon" class="sliding-icon" width="30" height="30" position: relative; left: 50px; top: 30px;/>
+        <!-- <img src="/assets/pins/layer-svgrepo-com.svg" alt="SVG Icon" class="sliding-icon" width="30" height="30" position: relative; left: 50px; top: 30px;/> -->
     </div>
 
     <div id="mapContainer">
+         <!-- Side Bar -->
         <input type="checkbox" id="check">
         <label for="check">
             <i class="fas fa-bars" id="btn"></i>
@@ -33,13 +34,13 @@
             <header>Admin</header>
             <ul>
                 <li><a href="index.html"><i class="fa fa-qrcode"></i>Dashboard</a></li>
-                <li><a href="../pages/report.html"><i class="fas fa-book"></i>Student Reports</a></li>
-                <li><a href="../pages/student_history.html"><i class="fas fa-history"></i>History</a></li>
+                <li><a href="STUDENT UI/report.html"><i class="fas fa-book"></i>Student Reports</a></li>
+                <li><a href="ADMIN/ADMIN/history.html"><i class="fas fa-history"></i>History</a></li>
                 <li><a href="ADMIN/ADMIN/profile_admin.html"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                <li><a href="#" class="logout-link"><i class="fas fa-sign-out"></i>Logout</a></li>
+                <li><a href="#"><i class="fas fa-sign-out"></i>Logout</a></li>
             </ul>   
-
         </div>
+
         <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- First Floor -->
             <g id="firstFloor">
@@ -128,10 +129,6 @@
                 <text x="41" y="62" font-size="16" fill="black" font-family="Arial" text-anchor="middle">
                     CR 2
                 </text>         
-
-            <g style="cursor: pointer;" onclick="showFloor(2)">
-                <image href="../pins/2nd.svg" x="1120" y="1000" width="60" height="60" />
-            </g>
             </g>
 
             <!-- Second Floor -->
@@ -208,13 +205,40 @@
                 <text x="145" y="680" font-size="16" fill="black" font-family="Arial" text-anchor="middle">
                 OSP/Huddle
                 </text>
-                <g style="cursor: pointer;" onclick="showFloor(1)">
-                    <image href="../pins/1st.svg" x="1120" y="1000" width="60" height="60" />
-                </g>
+            </g>
+            <g style="cursor: pointer;" onclick="showFloor(1)">
+                <image href="assets/pins/1st.svg" x="1150" y="930" width="60" height="60" />
+            </g>
+        
+            <!-- Second Floor Button -->
+            <g style="cursor: pointer;" onclick="showFloor(2)">
+                <image href="assets/pins/2nd.svg" x="1150" y="1000" width="60" height="60" />
             </g>
         </svg>
     </div>
-    
+
+
+    <div>
+        <!-- <button onclick="showFloor(1)">Show First Floor</button>
+        <button onclick="showFloor(2)">Show Second Floor</button> -->
+        <svg>
+            <g style="cursor: pointer;" onclick="showFloor(1)">
+                <!-- Path for the button background -->
+                <path d="M880,10 h180 v40 h-180 z"  />
+                <!-- SVG pin image as button icon -->
+                <image href="assets/pins/1stfloor.svg" x="790" y="15" width="70" height="70" />
+            </g>
+        
+            <!-- Second Floor Button -->
+            <g style="cursor: pointer;" onclick="showFloor(2)">
+                <!-- Path for the button background -->
+                <path d="M880,60 h180 v40 h-180 z"  />
+                <!-- SVG pin image as button icon -->
+                <image href="assets/pins/2ndfloor.svg" x="890" y="65" width="70" height="70" />
+            </g>
+        </svg>
+        </div> 
+
     <script src="../script/app.js"></script>
 </body>
 

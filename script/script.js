@@ -11,6 +11,14 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+
 // Login form submission and redirection based on role
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
