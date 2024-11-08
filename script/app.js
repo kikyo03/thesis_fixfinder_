@@ -111,13 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 pin.style.position = "absolute";
 
-                // Ask the user if they want to proceed to the report or status page after confirming
-                const proceedTo = window.confirm("Do you want to proceed to the report page? Press OK for Reports or Cancel for Status.");
-                if (proceedTo) {
-                    window.location.href = '/pages/report.html'; // Redirect to the report page
-                } else {
-                    window.location.href = '/pages/status.html'; // Redirect to the status page
-                }
+                // Show custom modal to choose between Reports, Status, or Cancel
+                showCustomModal(pinId);
 
                 // Disable dragging after confirmation
                 pin.removeEventListener('mousedown', onMouseDown);
@@ -126,20 +121,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Make the pin clickable after placement
                 pin.addEventListener('click', () => {
-                    const userAction = window.confirm("Do you want to remove this pin? Press OK to remove or Cancel to proceed to the report/status page.");
+                    const userAction = window.confirm("Do you want to remove this pin? Press OK to remove or Cancel to proceed to Reports/Status.");
                     if (userAction) {
                         mapContainer.removeChild(pin); // Remove pin if user clicks OK
                         // Also remove from saved pin positions
                         pinPositions = pinPositions.filter(p => p.pinId !== pinId);
                         savePinPositions(); // Update localStorage
                     } else {
-                        // Ask whether to go to reports or status
-                        const goToPage = window.confirm("Do you want to go to the report page? Press OK for Reports or Cancel for Status.");
-                        if (goToPage) {
-                            window.location.href = '/pages/report.html'; // Redirect to the report page
-                        } else {
-                            window.location.href = '/pages/status.html'; // Redirect to the status page
-                        }
+                        showCustomModal(pinId); // Show the custom modal if the user wants to proceed
                     }
                 });
             } else {
@@ -197,6 +186,44 @@ document.addEventListener('DOMContentLoaded', function () {
     enablePinPlacement(itIcon);
     enablePinPlacement(repairIcon);
     enablePinPlacement(requestIcon);
+
+    // Custom Modal for choosing Reports, Status, or Cancel
+    function showCustomModal(pinId) {
+        // Create the modal
+        const modal = document.createElement('div');
+        modal.classList.add('custom-modal');
+        
+        // Create buttons for Reports, Status, Cancel
+        const reportsButton = document.createElement('button');
+        reportsButton.textContent = 'Reports';
+        const statusButton = document.createElement('button');
+        statusButton.textContent = 'Status';
+        const cancelButton = document.createElement('button');
+        cancelButton.textContent = 'Cancel';
+        
+        // Append buttons to the modal
+        modal.appendChild(reportsButton);
+        modal.appendChild(statusButton);
+        modal.appendChild(cancelButton);
+        
+        // Append modal to the body
+        document.body.appendChild(modal);
+
+        // Button actions
+        reportsButton.addEventListener('click', () => {
+            window.location.href = '/pages/report.html'; // Redirect to Reports page
+            document.body.removeChild(modal); // Close the modal
+        });
+
+        statusButton.addEventListener('click', () => {
+            window.location.href = '/pages/status.html'; // Redirect to Status page
+            document.body.removeChild(modal); // Close the modal
+        });
+
+        cancelButton.addEventListener('click', () => {
+            document.body.removeChild(modal); // Close the modal without redirect
+        });
+    }
 });
 
 // Load saved pins from localStorage when the page loads

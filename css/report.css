@@ -200,6 +200,40 @@ input[type="file"] {
   border-color: #4CAF50;
 }
 
+/* Title container */
+.report-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Title container */
+.report-title {
+  display: flex;
+  align-items: center; /* Aligns the label and input on the same line */
+  margin-bottom: 20px;
+}
+
+/* Title label styling */
+.report-title p {
+  color: #333;
+  font-size: 1em;
+  margin-right: 10px; /* Space between label and input */
+  font-weight: bold;
+}
+
+/* Title input styling */
+.report-title input[type="text"] {
+  padding: 12px;
+  font-size: 1em;
+  width: 100%;
+  max-width: 400px; /* Limit the width of the input */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
 
 
 
