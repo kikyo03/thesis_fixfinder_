@@ -1,7 +1,8 @@
-body {
+.forHistory {
     font-family: Arial, sans-serif;
     background-color: #C7C6C6;
     padding: 20px;
+    display: block;
 }
 
 .container {

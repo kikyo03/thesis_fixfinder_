@@ -50,20 +50,27 @@ if (isset($_GET['action'])) {
     }
 
     // Handle Login (same as before)
+    session_start(); // Start the session
+    
     if ($action == 'login' && $_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle Login
         $email = $_POST['email'];
         $password = $_POST['password'];
-
+    
         // Check if the email exists in the database
         $sql = "SELECT * FROM studinfo WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
-
+    
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
+    
+            // Store the user's first and last name in the session
+            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['last_name'] = $user['last_name'];
+    
             // Role-based redirection
             if ($user['role'] === 'Admin') {
                 header("Location: ADMIN\ADMIN\admin.html");
@@ -74,10 +81,9 @@ if (isset($_GET['action'])) {
         } else {
             echo "<p>Invalid email or password. Please try again.</p>";
         }
-        
+    
         $stmt->close();
     }
-
-    $conn->close();
 }
+    $conn->close();
 ?>

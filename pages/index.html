@@ -12,34 +12,41 @@
 
 <body id="body">
 
-    <div id="name">
-        <p id="namep">Name</p>
-    </div>
+    <!-- <div id="name">
+        <p id="namep"><?php echo htmlspecialchars($user_id); ?></p> 
+    </div> -->
 
-    <!-- Sliding column -->
     <div id="slidingColumn">
         <button id="closeButton">Close</button>
         <div id="pins"></div>
-        <img src="/assets/pins/layer-svgrepo-com.svg" alt="SVG Icon" class="sliding-icon" width="30" height="30" position: relative; left: 50px; top: 30px;/>
+    
+        <!-- Pin Icons -->
+        <img 
+            id="cautionIcon" 
+            src="../img/Caution_noshadow.png" 
+            alt="Caution Pin" 
+            style="width: 50px; height: auto; position: absolute; top: 150px; right: 200px; cursor: pointer; margin: 10px; z-index: 20;"
+            onclick="preparePin('cautionPin')"
+        />
+        
+        <img 
+            id="cleaningIcon" 
+            src="../img/Cleaning_noshadow.png" 
+            alt="Cleaning Pin" 
+            style="width: 50px; height: auto; position: absolute; top: 220px; right: 200px; cursor: pointer; margin: 10px; z-index: 20;"
+            onclick="preparePin('cleaningPin')"
+        />
+        <!-- Add other icons similarly -->
+        
+        <!-- The Confirm Button will appear when a pin is selected -->
+        <button id="confirmButton" style="display: none;" onclick="confirmPin()">Confirm</button>
     </div>
+    
+    <!-- Map Section -->
 
     <div id="mapContainer">
-        <input type="checkbox" id="check">
-        <label for="check">
-            <i class="fas fa-bars" id="btn"></i>
-            <i class="fas fa-times" id="cancel"></i>
-        </label>
-        <div class="sidebar">
-            <header>Admin</header>
-            <ul>
-                <li><a href="index.html"><i class="fa fa-qrcode"></i>Dashboard</a></li>
-                <li><a href="../pages/report.html"><i class="fas fa-book"></i>Student Reports</a></li>
-                <li><a href="../pages/student_history.html"><i class="fas fa-history"></i>History</a></li>
-                <li><a href="ADMIN/ADMIN/profile_admin.html"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                <li><a href="#" class="logout-link"><i class="fas fa-sign-out"></i>Logout</a></li>
-            </ul>   
+        <div id="sidebar-container"></div>
 
-        </div>
         <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- First Floor -->
             <g id="firstFloor">
@@ -215,6 +222,7 @@
         </svg>
     </div>
     
+    <script src="../script/loadSidebar.js"></script>
     <script src="../script/app.js"></script>
 </body>
 

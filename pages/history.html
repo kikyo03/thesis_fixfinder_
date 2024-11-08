@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Report Management Dashboard</title>
+    
     <link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="forHistory">
+    <div id="sidebar-container"></div>
     <div class="container">
         <h1>History Reports</h1>
         <div class="search-bar">
@@ -36,7 +40,8 @@
             <button id="downloadButton">Download</button>
         </div>
     </div>
-
+    <script src="../script/loadSidebar.js"></script>
     <script src="../script/script.js"></script>
+    
 </body>
 </html>

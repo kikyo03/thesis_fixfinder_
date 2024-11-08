@@ -1,60 +1,206 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("bgmap.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-* {box-sizing: border-box;}
 
+/* Body background styling */
+body.report_details {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("../img/bgmap.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* New report button styling */
 .open-button {
-  background-color: #b5b2b2;
-  color: black;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-  font-weight: 800;
-}
-
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #111111;
-  border-radius: 16px;
-  z-index: 9;
-
-}
-
-.form-container .report {
-  max-width: 400px;
-  padding: 30px;
-  background-color: white;
-  border-radius: 16px;
-}
-
-.form-container .btn {
-  background-color: #04AA6D;
+  background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
+  padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1em; 
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.open-button:hover {
+  background-color: #45a049;
+}
+
+/* Popup form styling */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+  height: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-.form-container .cancel {
-  background-color: red;
+
+/* Form container styling */
+.form-container {
+  background-color: #ffffff;
+  width: 800px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: fixed; /* Ensure it's fixed in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the container */
+  z-index: 10000; /* Ensure it appears above the overlay */
 }
 
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+/* Report header styling */
+.form-container h1 {
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  color: #333;
 }
+
+/* Label and paragraph styling */
+.form-container label p {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+/* File upload container */
+.file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* File input styling */
+input[type="file"] {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Button styling */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn.cancel {
+  background-color: #f44336;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.btn.cancel:hover {
+  background-color: #e53935;
+}
+
+/* Inline container for file upload and date picker */
+.file-upload-date-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Space between file upload and date picker */
+  margin-bottom: 20px;
+}
+
+/* Label styling for file upload and date picker */
+.file-upload label,
+.date-picker-section label {
+  margin-right: 5px; /* Space between label and input */
+  color: #333;
+  font-size: 1em;
+}
+
+/* Date picker styling */
+.date-picker {
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.report-type {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.report-type label {
+  font-size: 1em;
+  color: #333;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.report-type select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+/* Change border color on focus */
+.report-type select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Option styling */
+.report-type option {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hover effect for dropdown options in some browsers */
+.report-type select:hover {
+  border-color: #4CAF50;
+}
+
+
+
+
+

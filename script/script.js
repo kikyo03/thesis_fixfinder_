@@ -28,7 +28,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     if (role === "Admin") {
         window.location.href = "../pages/admin.html"; // Replace with actual admin page URL 
     } else if (role === "User") {
-        window.location.href = "../pages/index.html"; // Replace with actual user page URL 
+        window.location.href = "../pages/index.php"; // Replace with actual user page URL 
     } else {
         alert("Please select a valid role.");
     }
