@@ -65,7 +65,7 @@ function loadPinPositions() {
             pinElement.id = position.pinId; // Use saved pin ID
             document.getElementById("mapContainer").appendChild(pinElement);
 
-            // Make the placed pin clickable for removal
+            // Add click event to handle removal
             pinElement.addEventListener('click', () => {
                 const removePin = window.confirm("Do you want to remove this pin?");
                 if (removePin) {
@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function onMouseUp() {
             isDragging = false;
 
+            // Immediately confirm the pin's position without asking about removal
             const action = window.confirm("Do you want to confirm this pin's location? Press Cancel to remove it or OK to place it.");
             
             if (action) {
@@ -118,19 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 pin.removeEventListener('mousedown', onMouseDown);
                 pin.removeEventListener('mousemove', onMouseMove);
                 pin.removeEventListener('mouseup', onMouseUp);
-
-                // Make the pin clickable after placement
-                pin.addEventListener('click', () => {
-                    const userAction = window.confirm("Do you want to remove this pin? Press OK to remove or Cancel to proceed to Reports/Status.");
-                    if (userAction) {
-                        mapContainer.removeChild(pin); // Remove pin if user clicks OK
-                        // Also remove from saved pin positions
-                        pinPositions = pinPositions.filter(p => p.pinId !== pinId);
-                        savePinPositions(); // Update localStorage
-                    } else {
-                        showCustomModal(pinId); // Show the custom modal if the user wants to proceed
-                    }
-                });
             } else {
                 mapContainer.removeChild(pin); // Remove pin if canceled
             }
@@ -210,10 +198,15 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(modal);
 
         // Button actions
+        // reportsButton.addEventListener('click', () => {
+        //     window.location.href = '/pages/report.html'; // Redirect to Reports page
+        //     document.body.removeChild(modal); // Close the modal
+        // });
+
         reportsButton.addEventListener('click', () => {
-            window.location.href = '/pages/report.html'; // Redirect to Reports page
-            document.body.removeChild(modal); // Close the modal
+            openForm(); // Open the report popup
         });
+        
 
         statusButton.addEventListener('click', () => {
             window.location.href = '/pages/status.html'; // Redirect to Status page
@@ -230,3 +223,11 @@ document.addEventListener('DOMContentLoaded', function () {
 window.onload = function() {
     loadPinPositions();
 };
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }

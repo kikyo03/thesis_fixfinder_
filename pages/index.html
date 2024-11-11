@@ -8,6 +8,7 @@
     <title>FixFinder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/report.css">
 </head>
 
 <body id="body">
@@ -221,9 +222,55 @@
             </g>
         </svg>
     </div>
+
+    <body class="report_details">
+        <!-- <div id="sidebar-container"></div> -->
+        <button class="open-button" onclick="openForm()">new report</button>
+        <div class="form-popup" id="myForm">
+            <form action="#" class="form-container">
+                <div class="report">
+                    <h1>Report</h1>
+    
+                    
+                    <label><p>Report here your concern.<p></label>
+                    <div class="report-title">
+                        <p>Title:</p>
+                        <input type="text" placeholder="Enter a title here">
+                    </div>
+                    <textarea rows="10" cols="40" placeholder="Write your details here.."></textarea>
+    
+                    <div class="report-type">
+                        <label for="reportType">Report Type:</label>
+                        <select id="reportType" name="reportType">
+                            <option value="">Select Report Type</option>
+                            <option value="caution">Caution</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="electrical-hazard">Electrical Hazard</option>
+                            <option value="it-maintenance">IT Maintenance</option>
+                            <option value="repair">Repair</option>
+                            <option value="request">Request</option>
+                        </select>
+                    </div>
+                    
+                    
+                    <div class="file-upload">
+                        <label for="myfile">Attach a file:</label>
+                        <input type="file" id="myfile" name="myfile">
+                    </div>
+                    <div class="date-picker-section">
+                        <label for="reportDate" class="date-label">Report Date:</label>
+                        <input type="date" id="reportDate" class="date-picker">
+                    </div>
+                </div>
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </div>
+            </form>
+        </div>
     
     <script src="../script/loadSidebar.js"></script>
     <script src="../script/app.js"></script>
+
 </body>
 
 </html>

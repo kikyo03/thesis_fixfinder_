@@ -7,7 +7,7 @@
 }
 
 /* Body background styling */
-body.report_details {
+/* body.report_details {
   display: block;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ body.report_details {
   background-image: url("../img/bgmap.png");
   background-size: cover;
   background-position: center;
-}
+} */
 
 /* New report button styling */
 .open-button {
@@ -35,8 +35,15 @@ body.report_details {
   background-color: #45a049;
 }
 
+/* Ensures the form is hidden when the page loads */
+#reportForm {
+  display: none;
+}
+
+
 /* Popup form styling */
 .form-popup {
+  display: none; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
@@ -203,35 +210,34 @@ input[type="file"] {
 /* Title container */
 .report-title {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-/* Title container */
-.report-title {
-  display: flex;
-  align-items: center; /* Aligns the label and input on the same line */
+  align-items: center; /* Align the label and input on the same line */
   margin-bottom: 20px;
 }
 
 /* Title label styling */
 .report-title p {
-  color: #333;
+  color: #000;
   font-size: 1em;
-  margin-right: 10px; /* Space between label and input */
-  font-weight: bold;
+  margin-right: 10px; /* Space between the label and input */
+  font-weight: normal; /* Adjust to match input font style */
+  font-family: Arial, sans-serif; /* Match font family of input */
 }
 
 /* Title input styling */
 .report-title input[type="text"] {
   padding: 12px;
   font-size: 1em;
+  font-family: Arial, sans-serif; /* Ensures both input and label have the same font */
   width: 100%;
   max-width: 400px; /* Limit the width of the input */
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+/* Placeholder styling */
+.report-title input[type="text"]::placeholder {
+  font-family: Arial, sans-serif; /* Match font family of input */
 }
 
 
